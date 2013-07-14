@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget
 Plugin URI: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
 Tags:  Tabber, Widget, Plugin
 Requires at least: 3.4
-Tested up to: 3.5
-Stable tag: 1.0
+Tested up to: 3.6
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -51,10 +51,20 @@ Q1 . Icons not showing on tabber tab? or Do you want to change the tabber icon i
 
 = 1.0 =		
 			
-First version		
+First version	
+
+= 2.0 =		
+
+Tested up to 3.6
+Bug fixed on CSS, JS link	
 
 == Changelog ==
 
 = 1.0 =		
 			
 First version
+
+= 2.0 =		
+
+Tested up to 3.6
+Bug fixed on CSS, JS link

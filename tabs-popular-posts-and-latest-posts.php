@@ -3,7 +3,7 @@
 Plugin Name: Tabs popular posts and latest posts
 Description: This is a jquery based lightweight plugin to create a new wordpress tabbed widget to display recent posts and popular posts.
 Author: Gopi.R
-Version: 1.0
+Version: 2.0
 Plugin URI: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
 Author URI: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
 Donate link: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
@@ -13,19 +13,24 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 global $wpdb, $wp_version;
 
+define('WP_tplp_FAV', 'http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/');
+define('WP_tplp_LINK', 'Check official website for more information <a target="_blank" href="'.WP_tplp_FAV.'">click here</a>');
+
 // Main method to load tabber widget
 function TabsPosts()
 {
 	global $wpdb;
 	$tplp_popular_posts = get_option('tplp_popular_posts');
 	$tplp_latest_posts = get_option('tplp_latest_posts');
+	$tplp_popular_title = get_option('tplp_popular_title');
+	$tplp_latest_title = get_option('tplp_latest_title');
 	if(!is_numeric($tplp_popular_posts)) { $tplp_popular_posts = 5 ;}
 	if(!is_numeric($tplp_latest_posts)) { $tplp_latest_posts = 5 ;}
 	?>
 	<div id="TabsPostsTabber">
 		<ul class="TabsPostsTabs">
-			<li><a href="#TabsPostsLeft">Popular</a></li>
-			<li><a href="#TabsPostsRight">Recent</a></li>
+			<li><a href="#TabsPostsLeft"><?php echo $tplp_popular_title; ?></a></li>
+			<li><a href="#TabsPostsRight"><?php echo $tplp_latest_title; ?></a></li>
 		</ul>
 		<div class="clear"></div>
 		<div class="TabsPostsInside">
@@ -54,7 +59,10 @@ function tabs_shortcode( $atts )
 function tabs_popular_latest_posts_install() 
 {
 	global $wpdb, $wp_version;
+	add_option('tplp_popular_title', "Popular");
 	add_option('tplp_popular_posts', "5");
+	
+	add_option('tplp_latest_title', "Recent");
 	add_option('tplp_latest_posts', "5");
 }
 
@@ -70,8 +78,8 @@ function tabs_popular_latest_posts_add_javascript_files()
 	if (!is_admin())
 	{
 		wp_enqueue_script('jquery');
-		wp_enqueue_style( 'tplp_style', get_option('siteurl').'/wp-content/plugins/tabs-popular-posts-and-latest-posts/inc/style.css');
-		wp_enqueue_script( 'tplp_script', get_option('siteurl').'/wp-content/plugins/tabs-popular-posts-and-latest-posts/inc/script.js', '', '1.0', true);
+		wp_enqueue_style( 'tplp_style', get_option('siteurl').'/wp-content/plugins/tabs-widget-popular-posts-and-latest-posts/inc/style.css');
+		wp_enqueue_script( 'tplp_script', get_option('siteurl').'/wp-content/plugins/tabs-widget-popular-posts-and-latest-posts/inc/script.js', '', '1.0', true);
 	}
 }   
 
@@ -80,18 +88,35 @@ function tabs_popular_latest_posts_control()
 {
 	$tplp_popular_posts = get_option('tplp_popular_posts');
 	$tplp_latest_posts = get_option('tplp_latest_posts');
+	$tplp_popular_title = get_option('tplp_popular_title');
+	$tplp_latest_title = get_option('tplp_latest_title');
+	
 	if (@$_POST['tplp_submit']) 
 	{
 		$tplp_popular_posts = $_POST['tplp_popular_posts'];
 		$tplp_latest_posts = $_POST['tplp_latest_posts'];
+		$tplp_popular_title = $_POST['tplp_popular_title'];
+		$tplp_latest_title = $_POST['tplp_latest_title'];
+		
 		update_option('tplp_popular_posts', $tplp_popular_posts );
 		update_option('tplp_latest_posts', $tplp_latest_posts );
+		update_option('tplp_popular_title', $tplp_popular_title );
+		update_option('tplp_latest_title', $tplp_latest_title );
 	}
+	echo '<p>Popular posts tab title:<br><input  style="width: 200px;" type="text" value="';
+	echo $tplp_popular_title . '" name="tplp_popular_title" id="tplp_popular_title" /></p>';
 	echo '<p>Number of popular posts to show:<br><input  style="width: 200px;" type="text" value="';
 	echo $tplp_popular_posts . '" name="tplp_popular_posts" id="tplp_popular_posts" /></p>';
+	
+	
+	echo '<p>Latest posts tab title:<br><input  style="width: 200px;" type="text" value="';
+	echo $tplp_latest_title . '" name="tplp_latest_title" id="tplp_latest_title" /></p>';
 	echo '<p>Number of latest posts to show:<br><input  style="width: 200px;" type="text" value="';
 	echo $tplp_latest_posts . '" name="tplp_latest_posts" id="tplp_latest_posts" /></p>';
+	
 	echo '<input type="hidden" id="tplp_submit" name="tplp_submit" value="1" />';
+	
+	echo WP_tplp_LINK;
 }
 
 /*Method to load tabber widget*/
