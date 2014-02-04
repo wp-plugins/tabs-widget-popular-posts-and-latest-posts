@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget
 Plugin URI: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
 Tags:  Tabber, Widget, Plugin
 Requires at least: 3.4
-Tested up to: 3.6
-Stable tag: 2.0
+Tested up to: 3.8
+Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -43,28 +43,40 @@ Q1 . Icons not showing on tabber tab? or Do you want to change the tabber icon i
 
 == Screenshots ==
 
-1. http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
+1. Front Screen. http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
 
-2. http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
+2. Admin Screen. http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
 
 == Upgrade Notice ==
 
-= 1.0 =		
+= 1.0 =
 			
 First version	
 
-= 2.0 =		
-
-Tested up to 3.6
-Bug fixed on CSS, JS link	
-
-== Changelog ==
-
-= 1.0 =		
-			
-First version
-
-= 2.0 =		
+= 2.0 =
 
 Tested up to 3.6
 Bug fixed on CSS, JS link
+
+= 2.1 =
+
+1. Tested up to 3.8
+2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
+Plugin *.po file (tabs-popular-vs-latest.po) available in the languages folder.
+
+== Changelog ==
+
+= 1.0 =
+			
+First version
+
+= 2.0 =
+
+Tested up to 3.6
+Bug fixed on CSS, JS link
+
+= 2.1 =
+
+1. Tested up to 3.8
+2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
+Plugin *.po file (tabs-popular-vs-latest.po) available in the languages folder.

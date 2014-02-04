@@ -3,7 +3,7 @@
 Plugin Name: Tabs popular posts and latest posts
 Description: This is a jquery based lightweight plugin to create a new wordpress tabbed widget to display recent posts and popular posts.
 Author: Gopi.R
-Version: 2.0
+Version: 2.1
 Plugin URI: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
 Author URI: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
 Donate link: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
@@ -13,8 +13,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 global $wpdb, $wp_version;
 
-define('WP_tplp_FAV', 'http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/');
-define('WP_tplp_LINK', 'Check official website for more information <a target="_blank" href="'.WP_tplp_FAV.'">click here</a>');
+//define('WP_tplp_FAV', '');
+//define('WP_tplp_LINK', 'Check official website for more information <a target="_blank" href="'.WP_tplp_FAV.'">click here</a>');
 
 // Main method to load tabber widget
 function TabsPosts()
@@ -91,7 +91,7 @@ function tabs_popular_latest_posts_control()
 	$tplp_popular_title = get_option('tplp_popular_title');
 	$tplp_latest_title = get_option('tplp_latest_title');
 	
-	if (@$_POST['tplp_submit']) 
+	if (isset($_POST['tplp_submit'])) 
 	{
 		$tplp_popular_posts = $_POST['tplp_popular_posts'];
 		$tplp_latest_posts = $_POST['tplp_latest_posts'];
@@ -103,20 +103,23 @@ function tabs_popular_latest_posts_control()
 		update_option('tplp_popular_title', $tplp_popular_title );
 		update_option('tplp_latest_title', $tplp_latest_title );
 	}
-	echo '<p>Popular posts tab title:<br><input  style="width: 200px;" type="text" value="';
+	echo '<p>'.__('Popular posts tab title:', 'tabs-popular-vs-latest').'<br><input  style="width: 200px;" type="text" value="';
 	echo $tplp_popular_title . '" name="tplp_popular_title" id="tplp_popular_title" /></p>';
-	echo '<p>Number of popular posts to show:<br><input  style="width: 200px;" type="text" value="';
+	echo '<p>'.__('Number of popular posts to show:', 'tabs-popular-vs-latest').'<br><input  style="width: 200px;" type="text" value="';
 	echo $tplp_popular_posts . '" name="tplp_popular_posts" id="tplp_popular_posts" /></p>';
-	
-	
-	echo '<p>Latest posts tab title:<br><input  style="width: 200px;" type="text" value="';
+		
+	echo '<p>'.__('Latest posts tab title:', 'tabs-popular-vs-latest').'<br><input  style="width: 200px;" type="text" value="';
 	echo $tplp_latest_title . '" name="tplp_latest_title" id="tplp_latest_title" /></p>';
-	echo '<p>Number of latest posts to show:<br><input  style="width: 200px;" type="text" value="';
+	echo '<p>'.__('Number of latest posts to show:', 'tabs-popular-vs-latest').'<br><input  style="width: 200px;" type="text" value="';
 	echo $tplp_latest_posts . '" name="tplp_latest_posts" id="tplp_latest_posts" /></p>';
 	
 	echo '<input type="hidden" id="tplp_submit" name="tplp_submit" value="1" />';
 	
-	echo WP_tplp_LINK;
+	echo '<p>';
+	_e('Check official website for more information', 'tabs-popular-vs-latest');
+	?> 
+	<a target="_blank" href="http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/">
+	<?php _e('click here', 'tabs-popular-vs-latest'); ?></a></p><?php
 }
 
 /*Method to load tabber widget*/
@@ -154,15 +157,24 @@ function tabs_popular_latest_posts_init()
 {
 	if(function_exists('wp_register_sidebar_widget')) 
 	{
-		wp_register_sidebar_widget('Tabs popular posts and latest posts', 'Tabs popular posts and latest posts', 'tabs_popular_latest_posts_widget');
+		wp_register_sidebar_widget( __('Tabs popular posts and latest posts', 'tabs-popular-vs-latest'), 
+			__('Tabs popular posts and latest posts', 'tabs-popular-vs-latest'), 'tabs_popular_latest_posts_widget');
 	}
 	if(function_exists('wp_register_widget_control')) 
 	{
-		wp_register_widget_control('Tabs popular posts and latest posts', array('Tabs popular posts and latest posts', 'widgets'), 'tabs_popular_latest_posts_control');
+		wp_register_widget_control( __('Tabs popular posts and latest posts', 'tabs-popular-vs-latest'), 
+			array( __('Tabs popular posts and latest posts', 'tabs-popular-vs-latest'), 'widgets'), 'tabs_popular_latest_posts_control');
 	} 
 }
 
+/*Plugin textdomain*/
+function tabs_popular_latest_posts_textdomain() 
+{
+	  load_plugin_textdomain( 'tabs-popular-vs-latest', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
 /*Plugin hook*/
+add_action('plugins_loaded', 'tabs_popular_latest_posts_textdomain');
 add_action("plugins_loaded", "tabs_popular_latest_posts_init");
 add_action('wp_enqueue_scripts', 'tabs_popular_latest_posts_add_javascript_files');
 register_activation_hook(__FILE__, 'tabs_popular_latest_posts_install');
