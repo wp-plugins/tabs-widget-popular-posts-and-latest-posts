@@ -2,8 +2,8 @@
 /*
 Plugin Name: Tabs popular posts and latest posts
 Description: This is a jquery based lightweight plugin to create a new wordpress tabbed widget to display recent posts and popular posts.
-Author: Gopi.R
-Version: 2.1
+Author: Gopi Ramasamy
+Version: 2.2
 Plugin URI: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
 Author URI: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
 Donate link: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
@@ -12,9 +12,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 global $wpdb, $wp_version;
-
-//define('WP_tplp_FAV', '');
-//define('WP_tplp_LINK', 'Check official website for more information <a target="_blank" href="'.WP_tplp_FAV.'">click here</a>');
 
 // Main method to load tabber widget
 function TabsPosts()
