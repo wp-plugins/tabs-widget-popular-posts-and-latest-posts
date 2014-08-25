@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Tabs popular posts and latest posts\n"
-"POT-Creation-Date: 2014-02-04 22:36+0800\n"
-"PO-Revision-Date: 2014-02-04 22:36+0800\n"
+"POT-Creation-Date: 2014-08-02 23:39+0800\n"
+"PO-Revision-Date: 2014-08-02 23:39+0800\n"
 "Last-Translator: \n"
 "Language-Team: www.gopiplus.com <www.gopiplus.com>\n"
 "MIME-Version: 1.0\n"
@@ -13,33 +13,33 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../tabs-popular-posts-and-latest-posts.php:106
+#: ../tabs-popular-posts-and-latest-posts.php:103
 msgid "Popular posts tab title:"
 msgstr ""
 
-#: ../tabs-popular-posts-and-latest-posts.php:108
+#: ../tabs-popular-posts-and-latest-posts.php:105
 msgid "Number of popular posts to show:"
 msgstr ""
 
-#: ../tabs-popular-posts-and-latest-posts.php:111
+#: ../tabs-popular-posts-and-latest-posts.php:108
 msgid "Latest posts tab title:"
 msgstr ""
 
-#: ../tabs-popular-posts-and-latest-posts.php:113
+#: ../tabs-popular-posts-and-latest-posts.php:110
 msgid "Number of latest posts to show:"
 msgstr ""
 
-#: ../tabs-popular-posts-and-latest-posts.php:119
+#: ../tabs-popular-posts-and-latest-posts.php:116
 msgid "Check official website for more information"
 msgstr ""
 
-#: ../tabs-popular-posts-and-latest-posts.php:122
+#: ../tabs-popular-posts-and-latest-posts.php:119
 msgid "click here"
 msgstr ""
 
-#: ../tabs-popular-posts-and-latest-posts.php:160
-#: ../tabs-popular-posts-and-latest-posts.php:161
-#: ../tabs-popular-posts-and-latest-posts.php:165
-#: ../tabs-popular-posts-and-latest-posts.php:166
+#: ../tabs-popular-posts-and-latest-posts.php:157
+#: ../tabs-popular-posts-and-latest-posts.php:158
+#: ../tabs-popular-posts-and-latest-posts.php:162
+#: ../tabs-popular-posts-and-latest-posts.php:163
 msgid "Tabs popular posts and latest posts"
 msgstr ""

@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget
 Plugin URI: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
 Tags:  Tabber, Widget, Plugin
 Requires at least: 3.4
-Tested up to: 3.9
-Stable tag: 2.2
+Tested up to: 3.0
+Stable tag: 2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -22,7 +22,7 @@ Check official website for live demo [http://www.gopiplus.com/work/2012/11/24/wo
 
 This is a jquery based lightweight plugin to create a new wordpress tabbed widget to display recent posts and popular posts.
 
-Advantage of this plugin
+**Advantage of this plugin**
 
 *	Lightweight plugin
 *	Smooth transitions between two tab
@@ -68,6 +68,11 @@ Plugin *.po file (tabs-popular-vs-latest.po) available in the languages folder.
 
 1. Tested up to 3.9
 
+= 2.3 =
+
+1. Tested up to 4.0
+2. JS bug fixed.
+
 == Changelog ==
 
 = 1.0 =
@@ -88,3 +93,8 @@ Plugin *.po file (tabs-popular-vs-latest.po) available in the languages folder.
 = 2.2 =
 
 1. Tested up to 3.9
+
+= 2.3 =
+
+1. Tested up to 4.0
+2. JS bug fixed.
