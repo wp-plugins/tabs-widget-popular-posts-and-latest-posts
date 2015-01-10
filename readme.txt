@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget
 Plugin URI: http://www.gopiplus.com/work/2012/11/24/wordpress-plugin-tabs-widget-popular-posts-and-latest-posts/
 Tags:  Tabber, Widget, Plugin
 Requires at least: 3.4
-Tested up to: 3.0
-Stable tag: 2.3
+Tested up to: 4.1
+Stable tag: 2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -73,6 +73,10 @@ Plugin *.po file (tabs-popular-vs-latest.po) available in the languages folder.
 1. Tested up to 4.0
 2. JS bug fixed.
 
+= 2.4 =
+
+1. Tested up to 4.1
+
 == Changelog ==
 
 = 1.0 =
@@ -98,3 +102,7 @@ Plugin *.po file (tabs-popular-vs-latest.po) available in the languages folder.
 
 1. Tested up to 4.0
 2. JS bug fixed.
+
+= 2.4 =
+
+1. Tested up to 4.1
